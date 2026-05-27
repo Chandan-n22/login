@@ -1,0 +1,190 @@
+body {
+    /* styles for the main container */
+    background-color: #f0f4f9; 
+    margin: 0;
+    padding: 20px;
+}
+
+.cp {
+    /* styles for the content container */
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+}
+
+/* Your original white container - fully responsive */
+.cp1 {
+    width: 100%;
+    max-width: 450px; /* Default mobile width */
+    height: auto; 
+    background-color: white;
+    border-radius: 28px;
+    font-family: Arial, sans-serif;
+    padding: 35px;
+    
+    display: flex;
+    flex-direction: column; /* Stacks vertically on mobile by default */
+    gap: 22px; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+/* Your Image Styles */
+img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 16px;
+}
+
+/* Your Text Styles */
+#sign-in {
+    font-size: 24px; 
+    font-weight: 400;
+    margin: 0;
+    color: #1f1f1f;
+}
+
+#use-account {
+    font-size: 16px;
+    font-weight: normal;
+    margin: 26px 0 0 0;
+    color: #444746;
+}
+
+/* Input container setup */
+.inp {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-right: 30px;
+}
+
+.inp input {
+    width: 100%;
+    height: 30px;
+    padding: 16px;
+    border: 1px solid #747775;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+}
+
+.inp input:focus {
+    border: 2px solid #0b57d0;
+    padding: 15px;
+}
+
+/* Links Style */
+a {
+    color: #0b57d0;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Guest mode section */
+.st {
+    font-size: 14px;
+    color: #444746;
+    line-height: 1.4;
+}
+
+/* Button section */
+.bt {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#next {
+    background-color: #0b57d0;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* Language and footer wrapper */
+.cp2 {
+    width: 100%;
+    max-width: 450px; /* Keeps footer aligned with the box width on mobile */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 0 10px;
+}
+
+#language {
+    border: none;
+    background: transparent;
+    color: #444746;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+}
+
+.ft {
+    display: flex;
+    gap: 16px;
+}
+
+.ft a {
+    color: #444746;
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+}
+
+
+/* --------------------------------------------------------------------------
+   PC / DESKTOP LAYOUT (Applies when the screen width is 768px or wider)
+   ========================================================================== */
+@media (min-width: 768px) {
+    .cp1 {
+        max-width: 850px; /* Expands to a wide desktop style box */
+        display: grid;
+        /* Splits box into two equal columns: Left (inf) and Right (everything else) */
+        grid-template-columns: 1fr 1fr; 
+        column-gap: 48px;
+        row-gap: 0px;
+        padding: 40px;
+    }
+
+    /* Left column holds the branding details */
+    .inf {
+        grid-column: 1;
+        grid-row: 1 / span 3; /* Allows text to stretch downwards naturally */
+    }
+
+    /* Right column shifts your inputs, guest text, and buttons to the right side */
+    .inp {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .st {
+        grid-column: 2;
+        grid-row: 2;
+        margin-top: 10px;
+    }
+
+    .bt {
+        grid-column: 2;
+        grid-row: 3;
+        margin-top: 20px;
+    }
+
+    /* Expands the footer width to match the wider PC login box */
+    .cp2 {
+        max-width: 850px;
+    }
+}
